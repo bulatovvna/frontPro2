@@ -1,0 +1,66 @@
+.block{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.logo {
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: brown;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.content{
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid black; */
+}
+
+header {
+    background-color: aliceblue;
+}
+
+section {
+    background-color: gainsboro;
+}
+
+@media(max-width: 1200px ){
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media(max-width: 800px){
+    .contianer{
+        max-width: 650px;
+    }
+}
+
+@media(max-width: 400px){
+    .contianer{
+        max-width: 350px;
+    }
+    .content{
+        flex-direction: column;
+    }
+}
