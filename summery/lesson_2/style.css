@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Oswald:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Open+Sans&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+/* header start */
+
+.header {
+    min-height: 740px;
+    background-image: url(./media/Image20230505100833.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-head {
+    max-width: 734px;
+    margin-bottom: 35px;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 95px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.desc-head {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+/* header end */
+
+/* experience start */
+
+.experience-wrapper {
+    position: relative;
+}
+
+.experience {
+    padding: 57px 130px;
+    position: absolute;
+    top:  -150px;
+    left: 50%;
+    transform: translate(-50%);
+    max-width: 1110px;
+    width: 100%;
+    min-height: 300px;
+    background: #f7f7f7;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.exp-item {
+    width: 190px;
+    font-family: 'Oswald';
+    font-weight: 500;
+    text-align: center;
+}
+
+.exp-h4 {
+    font-size: 72px;
+    line-height: 107px;
+    color: #F7654A;
+}
+
+.exp-h5 {
+    font-size: 36px;
+    line-height: 53px;
+}
+
+.exp-p {
+    font-size: 18px;
+    line-height: 27px;
+    color: #999999;
+}
+
+@media screen and (max-width: 1200px) {
+    .experience {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .experience {
+        grid-template-columns: 1fr;
+    }
+}
+/* experience end */
+
+/* projects start */
+
+.projects-wrapper {
+    padding-top: 250px;
+    margin-bottom: 88px;
+}
+
+.projects-h2 {
+    margin-bottom: 60px;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 53px;
+    text-align: center;
+    color: #404149;
+}
+
+.projects {
+    display: flex;
+    gap: 30px;
+}
+
+.project {
+    max-width: 350px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.line {
+    margin-top: 45px;
+    margin-bottom: 15px;
+    width: 55px;
+    height: 6px;
+    background: #f7654a;
+}
+
+.project-h2 {
+    margin-bottom: 20px;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #404149;
+}
+
+.project-p {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #999999;
+}
+
+@media screen and (max-width: 1200px){
+    .projects-wrapper {
+        padding-top: 425px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .projects-wrapper {
+        padding-top: 840px;
+    }
+    .projects {
+        flex-direction: column;
+        align-items : center;
+    }
+}
+
+/*projects end */
+
+/* contact start */
+
+.contact>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact {
+    background: #f7654a;
+    padding-top: 30px;
+    padding-bottom: 45px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-text {
+    display: block;
+    font-family: "Oswald";
+    color: white;
+    font-weight: 700;
+}
+
+.contact-h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: 'Oswald';
+    font-size: 48px;
+    line-height: 71px;
+    letter-spacing: 0.02em;
+}
+
+.contact-h4 {
+    font-family: 'Oswald';
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+}
+
+
+
+.contact-btn {
+    margin-top: 73px;
+    width: 175px;
+    height: 49px;
+    background: #ffffff;
+    padding: 14px 40px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #000000;
+    border: none;
+}
+/* contact end */
