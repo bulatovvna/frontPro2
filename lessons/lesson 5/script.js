@@ -1,4 +1,4 @@
-let array = [10,20,30,40,50]
+// let array = [10,20,30,40,50]
 
 // array.forEach((elem) => console.log(elem))
 
@@ -48,12 +48,18 @@ let array = [10,20,30,40,50]
 // let result = words.map(elem => elem.replace(elem[0], elem[0].toUpperCase()))
 // console.log(result);
 
-let names = ['Steven', 'Alex', 'Nina', 'nancy']
+// let names = ['Steven', 'Alex', 'Nina', 'nancy']
 
 // let result = names.find(elem => elem[0] === 'N')
 // console.log(result);
 // let result = names.find(elem => elem[0].toUpperCase() === 'N')
 // console.log(result);
 
-let result = names.find(elem => elem[elem.length-1] === 'a')
-console.log(result);
+// let result = names.find(elem => elem[elem.length-1] === 'a')
+// console.log(result);
+
+// let a = ['велосипед', "самокат", "ролики"]
+// let result = a.findIndex((elem) => elem[0] === "с")
+
+let result2 = a.findIndex((elem) => elem[elem.length-1] === "и")
+console.log(result2);

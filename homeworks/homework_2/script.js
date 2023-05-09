@@ -44,3 +44,33 @@ function createQuence(num) {
 }
 console.log(createQuence(3));
 
+// ------------------ callback -------------------
+
+// 1 Напишите функцию checkEven(array,callback), которая получает в качестве аргумента массив и колбек-функцию. Функция должна проверить, удовлетворяют ли все 
+// элементы массива указанному условию колбека. Если найдется хотя бы 1 элемент, который не будет удовлетворять условию, функция должна вернуть сообщение
+//  “Не все элементы удовлетворяют указанному условию”, в противном случае “Все элементы удовлетворяют указанному условию”. Колбек в качестве аргумента должен
+//  передавать значение элемента.
+
+let arr = [1,2,3,4,5]
+function checkEven(array,callback){
+    for (let i = 0; i < array.length; i++) {
+        if(!callback(array[i])){
+            return 'Не все элементы удовлетворяют указанному условию'
+        }
+    }
+    return 'Все элементы удовлетворяют указанному условию'
+}
+console.log(checkEven(arr,(elem) => elem > 0));
+console.log(checkEven(arr,(elem) => elem < 4));
+
+// 2 
+function checkSome(array,callback){
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i])){
+            return 'Минимум 1 элемент удовлетворяет указанному условию'
+        }
+    }
+    return 'Ни один элемент не удовлетворяют указанному условию'
+}
+console.log(checkSome(arr, (elem) => elem === 4 ));
+console.log(checkSome(arr, (elem) => elem === 6 ));
