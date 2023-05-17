@@ -71,7 +71,29 @@ console.log(priceInSale);
 console.log('------8------');
 // Создайте новый массив, изменив только 1 сво-во count на значение 0 для всех элементов (учитывая другие  сво-ва)
 
+let newArray = goods.slice()
+newArray.map((newArray) => {
+    newArray.count = 0
+    return newArray
+})
+console.log(newArray);
+console.log(goods);
 
+console.log('--------------------------------------');
+
+let copiedArray = JSON.parse(JSON.stringify(goods))
+copiedArray.map((copiedArray) => {
+    copiedArray.count = 0
+    return copiedArray
+})
+console.log(copiedArray);
+console.log(goods);
+// разве goods не должен был остаться без изменении? Это же глубокое копирование
 
 console.log('------9------');
 // Отфильтруйте массив по сво-ву title
+
+let filteredByTitle = goods.sort((a,b) => {
+    return (a.title > b.title) ? 1 : -1
+})
+console.log(filteredByTitle);
