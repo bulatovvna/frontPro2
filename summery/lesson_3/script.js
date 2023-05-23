@@ -92,3 +92,38 @@
 
 // button.onclick = clear
 
+// const zoom500 = document.querySelector(`.zoom__img`)
+
+// let zoomCount = 200
+// let checkZoom = false;
+
+// const zoom1 = () => {
+//     if (!checkZoom) {
+//         zoomCount += 50
+//         zoom500.style = `width:${zoomCount}px; height:${zoomCount}px;`
+//         if (zoomCount == 500) checkZoom = true;
+//     }
+//     else {
+//         zoomCount -= 50
+//         zoom500.style = `width:${zoomCount}px; height:${zoomCount}px;`
+//         if (zoomCount === 200) checkZoom = false;
+//     }
+// }
+// zoom500.onclick = zoom1
+
+// ---------------------------------------------------
+
+const toggle = document.querySelector('.navbar__toggle')
+
+function toggleHandler(){
+
+    if(this.classList.contains('navbar_toggle_active')){
+        this.classList.remove('navbar_toggle_active')
+        this.parentElement.querySelector('.navbar').classList.remove('navbar__show')
+    } else {
+        this.classList.add('navbar_toggle_active')
+        this.parentElement.querySelector('.navbar').classList.add('navbar__show')
+    }
+}
+
+toggle.onclick = toggleHandler;
