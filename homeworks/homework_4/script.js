@@ -75,6 +75,8 @@ let array_1 = [1, 4, 7, 8, 2]
 let array_2 = [1, 5, 11, 6, 2]
 
 function intersection(arr1,arr2){
-    let newArray = []
-
+    let newArray = arr1.filter((elem) => arr2.includes(elem))
+    newArray.sort((a, b) => b - a)
+    return newArray
 }
+console.log(intersection(array_1, array_2));
