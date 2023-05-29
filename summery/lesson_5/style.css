@@ -1,0 +1,138 @@
+:root {
+    --main-color-black: #000;
+    --main-bg-grayExtraLight:#f5f5f5;
+    --main-color-white: #fff;
+    --main-color-gray: #959DAD;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+header {
+    background: var(--main-color-white);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 8px 8px;
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 16px 0;
+}
+
+.header_cart {
+    position: relative;
+}
+
+.header_cart span {
+    background-color: var(--main-color-gray);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    display: block;
+    text-align: center;
+    right: 0;
+    top: 0;
+    bottom: 100%;
+    font-size: 8px;
+    color: var(--main-color-white);
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    padding-top: 32px;
+}
+
+aside {
+    max-width: 160px;
+}
+
+.content {
+    width: 100%;
+}
+
+.navbar {
+    list-style: none;
+}
+
+.navbar__item {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: var(--main-color-gray)
+}
+
+.navbar__item:not(.navbar__item_active):hover {
+    color: #59606D;
+}
+
+.navbar__item_active {
+    text-decoration: underline;
+    color: #1F1F1F;
+}
+
+.cards__header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cards__filter {
+    padding: 10px 0;
+}
+
+.filter {
+    padding: 10px 0;
+    color: #1F1F1F;
+    position: relative;
+}
+
+.filter__label {
+    margin-bottom: 10px;
+}
+
+.filter__label span {
+    color: var(--main-color-gray);
+    font-size: 16px;
+    cursor: context-menu;
+}
+
+.filter:hover .filter__dropdown {
+    display: block;
+}
+
+.filter__dropdown {
+    position: absolute;
+    background-color: var(--main-color-white);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    list-style: none;
+    padding: 8px 0;
+    right: 0;
+    display: none;
+}
+
+.filter__dropdown__item {
+    padding: 4px 12px;
+    color: var(--main-color-gray);
+    cursor: pointer;
+}
+
+.filter__dropdown__item :hover {
+    background-color: var(--main-bg-grayExtraLight);
+    color: #1f1f1f;
+}
