@@ -27,10 +27,29 @@ console.log('-------2-------');
 // Функция removeUser(id). Функция должна по передаваемому в качестве аргумента ID реализовать удаление пользователя в массиве users
 
 function removeUser(id){
-    let indexOfUser = users.findIndex(elem => elem.id)
-    if(id === indexOfUser){
+    let indexOfUser = users.findIndex(elem => elem.id === id)
+    if(indexOfUser !== -1){
         users.splice(indexOfUser, 1)
-    } else return 'there is not user under this id'
+        return true, users
+    } return false, 'There is not user under this id'
 }
-let removedArray = removeUser(1)
+let removedArray = removeUser(3)
 console.log(removedArray);
+
+
+console.log('-----3------');
+// Функция changeUser(id, name, salary). Функция должна по id найти заданный элемент и переопределить значение name и salary на значение, 
+// указанные в аргументе в момент вызова
+
+function changeUser(id, name, salary){
+    let user = users.find(user => user.id === id)
+    if(user){
+        user.name = name
+        user.salary = salary
+        return true, users
+    } return false, 'There is not user under this id'
+}
+let result = changeUser(6, 'Alex', 1500)
+console.log(result);
+let res = changeUser(2, 'Alex', 1500)
+console.log(res);
