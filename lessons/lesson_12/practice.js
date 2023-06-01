@@ -28,6 +28,7 @@ function rerender(array){
 function render(array){
     for (let elem of array){
         let div_elem = document.createElement('div')
+        div_elem.classList.add('card')
         let p_price = document.createElement('p')
         let p_name = document.createElement('p')
 
@@ -38,5 +39,6 @@ function render(array){
         div_wrapper.append(div_elem)
     }
     div_root.append(div_wrapper)
+    
 }
 render(products)
