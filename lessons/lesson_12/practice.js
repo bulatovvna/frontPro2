@@ -1,15 +1,13 @@
 // Реализовать форму которая позволяет добавить новый элемент в список продуктов в массив. 
 // Данные из массива должно отображться в интерфейсе при добавлении нового товара. 
 
-let products = [
-    {id: 1, name: 'Велосипед', price: 1000},
-    {id: 2, name: 'Самокат', price: 2000},
-    {id: 3, name: 'Ролики', price: 400},
-]
+let products = JSON.parse(localStorage.getItem('products')) ?? []
 
 let form_elem = document.querySelector('form')
 let div_root = document.querySelector('#root')
 let div_wrapper = document.createElement('div')
+
+div_wrapper.classList.add('div_wrapper')
 
 form_elem.onsubmit = (event) => {
     event.preventDefault()
@@ -20,7 +18,15 @@ form_elem.onsubmit = (event) => {
     rerender(products)
 }
 
+let button = document.querySelector('#rem_btn')
+button.onclick = () => {
+    localStorage.removeItem('products')
+    products = []
+    rerender(products)
+}
+
 function rerender(array){
+    localStorage.setItem('products', JSON.stringify(array))
     div_wrapper.innerHTML = ''
     render(array)
 }
@@ -32,6 +38,10 @@ function render(array){
         let p_price = document.createElement('p')
         let p_name = document.createElement('p')
 
+        div_elem.ondblclick = () => {
+            removeElem(elem.id)
+        }
+
         p_name.innerText = elem.name
         p_price.innerText = elem.price
 
@@ -41,4 +51,14 @@ function render(array){
     div_root.append(div_wrapper)
     
 }
+
+function removeElem(id){
+    products = products.filter(elem => elem.id !== id)
+    rerender(products)
+}
+
+
 render(products)
+
+// new Task:
+// Добавить на разметке кнопку, которая будет очищать данные на стороне интерфейса и LS соотсветсвенно
