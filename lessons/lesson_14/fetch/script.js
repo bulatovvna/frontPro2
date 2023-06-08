@@ -34,13 +34,28 @@
 // Получите данные используя сетевой запрос 
 // Выведите в косноль элемент массива, у которого самое большое сво-во title
 
-let url = 'https://jsonplaceholder.typicode.com/todos'
+// let url = 'https://jsonplaceholder.typicode.com/todos'
+
+// fetch(url)
+//     .then(res => res.json())
+//     .then(data => {
+//         let result = data.reduce((elem, maxElem) => {
+//             return elem.title.length > maxElem.title.length ? elem : maxElem
+//         })
+//         console.log(result);
+//     })
+
+// -----------------------------------------------
+// Задача
+// Задана ссылка:
+
+let url = 'https://fakestoreapi.com/products'
+
+// Реализуйте сетевой запрос и выведите элементы, чье сво-во count превышает числовое значение 250
 
 fetch(url)
     .then(res => res.json())
     .then(data => {
-        let result = data.reduce((elem, maxElem) => {
-            return elem.title.length > maxElem.title.length ? elem : maxElem
-        })
+        let result = data.filter(elem => elem.rating.count > 250)
         console.log(result);
     })

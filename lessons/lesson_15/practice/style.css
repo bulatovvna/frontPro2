@@ -1,0 +1,22 @@
+.product_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 350px);
+    grid-gap: 50px;
+    margin: 50px;
+}
+
+.product_image {
+    width: 300px;
+    height: 300px;
+}
+
+.product_elem {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 8px 4px 10px gray;
+    border-radius: 15px;
+}
