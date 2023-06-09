@@ -46,8 +46,46 @@ let store = {
                 title: 'Рюкзак Louis Vuitton Discovery 4 ',
                 price: 300000
             },
+        ],
+        '2':[
+            {
+                id:1,
+                img:'./img/imgRucksack.jpg',
+                title: 'Рюкзак Louis Vuitton Discovery2',
+                price: '16 000$'
+            }, {
+                id:2,
+                img:'./img/imgRucksack.jpg',
+                title: 'Рюкзак Louis Vuitton Discovery2',
+                price: '15 000$'
+            }, {
+                id:3,
+                img:'./img/imgRucksack.jpg',
+                title: 'Рюкзак Louis Vuitton Discovery2',
+                price: '10 000$'
+            }, {
+                id:4,
+                img:'./img/imgRucksack.jpg',
+                title: 'Рюкзак Louis Vuitton Discovery2',
+                price: '11 000$'
+            },
         ]
     }
+}
+
+const addProductInCart = (data) => {
+    data.cartId = Date.now()
+
+    let cartItems = JSON.parse(localStorage.getItem('cartItems'))
+
+    if(!cartItems){
+        cartItems = []
+    }
+
+    cartItems = [...cartItems, data];
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+
 }
 
 const setNavbar = (state) => {
@@ -71,7 +109,7 @@ const setNavbar = (state) => {
     return navbar;
 }
 
-document.getElementById('navbar').append(setNavbar(store.navbar))
+// document.getElementById('navbar').append(setNavbar(store.navbar))
 
 const setProducts = (catalogs, products) => {
     let cardsItems = document.createElement("div");
@@ -88,6 +126,7 @@ const setProducts = (catalogs, products) => {
 
                 let itemIcon = document.createElement("img");
                 itemIcon.setAttribute("src", "./img/iconBasket.svg");
+                itemIcon.addEventListener('click', () => addProductInCart(product))
 
                 itemHeader.append(itemIcon);
 
@@ -115,12 +154,24 @@ const setProducts = (catalogs, products) => {
 
     return cardsItems;
 }
+
+const openModalCart = () => {
+    let modalCart = document.querySelector('.modal')
+
+    modalCart.classList.toggle('modal__active')
+}
+
 function render(){
     let navbar = document.querySelector("#navbar")
     let cards = document.querySelector(".cards")
+    let cartOpen = document.querySelector('.header_cart')
+    let cartClose = document.querySelector('.cart__close')
 
     navbar.append(setNavbar(store.navbar))
     cards.append(setProducts(store.navbar, store.products));
+
+    cartOpen.onclick = openModalCart   
+    cartClose.onclick = openModalCart 
 }
 
 render();
