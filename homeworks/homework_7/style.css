@@ -5,8 +5,31 @@
 }
 
 .container {
-    width: 600px;
-    height: 800px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 400px);
+    gap: 20px;
+}
+
+.product {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 10px 8px 20px gray;
+    border-radius: 10px;
+}
+
+img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+.fa-star {
+    color: gray;
 }
