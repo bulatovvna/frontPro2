@@ -1,13 +1,13 @@
-let url = "https://dummyjson.com/products"
 
-fetch(url)
-    .then(res => res.json())
-    .then(data => {
-        render(data.products)
-        let rat = data.products.map(elem => elem.rating)
-        rating(rat)
-        console.log(rat);
-    })
+    let url = "https://dummyjson.com/products"
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            render(data.products)
+        })
+
+
 
 
 function render(products){
@@ -30,7 +30,9 @@ function render(products){
         let p_price = document.createElement('p')
         p_price.className = 'price'
         p_price.innerText = `Price: ${product.price}`
-        productItem.append(p_price)
+        
+
+        productItem.append(img, p_title, p_price, rating(product))
 
         container.append(productItem)
 
@@ -38,7 +40,7 @@ function render(products){
 }
 
 function rating(n){
-    let ratingValue = Math.round(n)
+    let ratingValue = Math.round(n.rating)
 
     let rating = document.createElement('div')
     rating.className = 'rating'
@@ -54,6 +56,5 @@ function rating(n){
         rating.append(star)
     }
 
-    let productItem = document.querySelector('.product')
-    productItem.append(rating)
+    return rating
 }

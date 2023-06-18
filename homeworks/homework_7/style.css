@@ -30,6 +30,6 @@ img {
     display: block;
 }
 
-.fa-star {
-    color: gray;
+.active {
+    color: orange;
 }
