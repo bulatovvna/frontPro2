@@ -96,7 +96,7 @@ const lena = {
 
 // ---------------------------
 
-const array = [1, 2, 3, 4, 5]
+// const array = [1, 2, 3, 4, 5]
 
 // function multBy(arr, n){
 //     return arr.map(function(i){
@@ -105,10 +105,65 @@ const array = [1, 2, 3, 4, 5]
 // }
 
 
-Array.prototype.multBy = function(n){
-    return this.map(function(i){
-        return i * n
-    })
-}
-console.log(array.multBy(2));
+// Array.prototype.multBy = function(n){
+//     return this.map(function(i){
+//         return i * n
+//     })
+// }
+// console.log(array.multBy(2));
 // array.multBy(2)
+
+// ----------------------------
+
+// Flags and descriptors of properties
+
+const user = {
+    name: 'Gyuzal',
+    age: 30,
+}
+
+Object.preventExtensions(user) // запрет на добавление свойств
+Object.seal(user) // запрет на добавление и удаление свойств
+Object.freeze(user) // запрет делать что либо с обьектом
+
+delete user.age
+
+user.country = 'France'
+
+console.log(user);
+
+console.log(Object.isExtensible(user));
+console.log(Object.isSealed(user));
+console.log(Object.isFrozen(user));
+
+// console.log(Object.getOwnPropertyDescriptor(user, 'name')); // value
+
+// Object.defineProperty(user, 'name', {
+//     writable: false, // запрещаем изменять
+//     enumerable: false, // запрещаем перечислять в циклах
+//     configurable: false // запрещаем удалять
+// })
+
+// Object.defineProperties(user,{
+//     name: {
+//     writable: false, 
+//     enumerable: false, 
+//     configurable: false 
+//     },
+//     age: {
+//         writable: false, 
+//         enumerable: false, 
+//         configurable: false 
+//     }
+// })
+
+// user.name = 'Alex'
+// user.age = 35
+// console.log(user);
+
+// for(let key in user){
+//     console.log(user[key]);
+// }
+
+// delete user.name
+// console.log(user);
