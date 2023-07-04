@@ -16,11 +16,14 @@ function render(data){
         productItem.className = 'productItem'
 
         let productDesc = document.createElement('div')
-        let imgProduct = document.createElement('img')
+
+        let imgProduct = document.createElement('div')
+        imgProduct.className = 'imgProduct'
+        imgProduct.style.backgroundImage = `url(${elem.images[0]})`
+
         let pTitle = document.createElement('p')
         let pPrice = document.createElement('p')
 
-        imgProduct.src = elem.images[0]
         pTitle.innerText = elem.title
         pPrice.innerText = elem.price
 
@@ -47,11 +50,32 @@ function modal(data){
     let divProductInfo = document.createElement('div')
     divProductInfo.className = 'productInfoWrapper'
 
+    let divProductDesc = document.createElement('div')
+    divProductDesc.className = 'divProductDesc'
+
+    let textProductDesc = document.createElement('p')
+    textProductDesc.innerHTML = `<h4>Product fescription:</h4> ${data.description}`
+
+    let productModalTitle = document.createElement('h4')
+    productModalTitle.className = 'productModalTitle'
+    productModalTitle.innerText = `Product name: ${data.title}`
+
+    divProductDesc.append(productModalTitle, textProductDesc, rating(data.rating))
+
+    let mainImg = document.createElement('img')
+    mainImg.className = 'modalMainImg'
+    mainImg.src = data.images[0]
+    divProductInfo.append(mainImg, divProductDesc)
+
     
     data.images.forEach(elem => {
         let image = document.createElement('img')
         image.src = elem
         divProductImages.append(image)
+
+        image.onclick = () => {
+            mainImg.src = elem
+        }
     })
 
     divModalContainer.append(divProductImages, divProductInfo)
