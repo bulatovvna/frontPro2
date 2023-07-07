@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+header {
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+.navbar__item .logo {
+    width: 175px;
+    display: block;
+}
+
+.navbar__item .icon-cart {
+    width: 24px;
+    height: 24px;
+}
+
+.wrapper {
+    padding-top: 95px;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
