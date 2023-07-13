@@ -8,7 +8,7 @@
     position: absolute;
     transition: all 0.5s;
     display: flex;
-    left: 500px;
+    left: 0;
 }
 
 .frame {
@@ -47,4 +47,25 @@
 
 .triggers>button:hover {
     opacity: 0.4;
+}
+
+.sliderBtnsWrapper {
+    position: absolute;
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+    bottom: 10px;
+    left: calc(50% - (200px / 2));
+}
+
+.sliderElemBtn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: orange;
+    border: 1px solid black;
+}
+
+.active {
+    background: rgb(65, 172, 38);
 }

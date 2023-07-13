@@ -35,15 +35,48 @@ for(let elem of images){
     cards.append(card)
 }
 
-frame.append(cards, triggers)
+// ------------------------
+let sliderBtns = document.createElement('div')
+sliderBtns.className = 'sliderBtnsWrapper'
+
+for( let index in images){
+    const button = document.createElement('button')
+    button.className = 'sliderElemBtn'
+
+    if(+index === sliderIndex){
+        button.classList.add('active')
+    }
+
+    button.onclick = () => {
+        sliderIndex = +index
+        cards.style.left = `${-1 * sliderIndex * 500}px`
+
+        const allBtns = document.querySelectorAll('.sliderElemBtn')
+        allBtns.forEach((elem) => elem.classList.remove('active'))
+
+        button.classList.add('active')
+    }
+
+    sliderBtns.append(button)
+}
+
+frame.append(cards, triggers, sliderBtns)
 divRoot.append(frame)
+
+const allBtns = document.querySelectorAll('.sliderElemBtn')
 
 const goRight = () => {
     if(sliderIndex < images.length - 1){
         sliderIndex++
+        allBtns[sliderIndex - 1].classList.remove('active')
+        allBtns[sliderIndex].classList.add('active')
+        
         cards.style.left = `${-1 * sliderIndex * 500}px`
     } else {
         sliderIndex = 0
+        allBtns[allBtns.length - 1].classList.remove('active')
+        allBtns[sliderIndex].classList.add('active')
+
         cards.style.left = `${-1 * sliderIndex * 500}px`
     }
 
@@ -52,12 +85,31 @@ const goRight = () => {
 const goLeft = () => {
     if(sliderIndex != 0){
         sliderIndex--
+        allBtns[allBtns.length + 1].classList.remove('active')
+        allBtns[sliderIndex].classList.add('active')
+
         cards.style.left = `${-1 * sliderIndex * 500}px`
     } else {
         sliderIndex = images.length - 1
+        allBtns[0].classList.remove('active')
+        allBtns[sliderIndex].classList.add('active')
+
         cards.style.left = `${-1 * sliderIndex * 500}px`
     }
 }
 
 rightBtn.addEventListener('click', goRight)
 leftBtn.addEventListener('click', goLeft)
+
+// --------------------------------------
+
+function moveSlider(index,side ){
+    const allBtns = document.querySelectorAll('.sliderElemBtn')
+    cards.style.left = `${-1 * sliderIndex * 500}px`
+
+    if(side === 'left'){
+        if(index !== 0){
+            
+        }
+    }
+}
